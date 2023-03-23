@@ -46,6 +46,10 @@ const Circle = ({ totalDots, sliderNumber, setSliderNumber }: Props) => {
   useEffect(() => {
     if (circleRef.current) {
       circleRef.current.style.transform = `rotate(${degree}deg)`;
+      const children = Array.from(circleRef.current.children)
+      children.forEach(dot => {
+        (dot.firstChild as HTMLDivElement).style.transform = `rotate(${-degree}deg)`
+      })
     }
   }, [degree]);
 
@@ -69,7 +73,7 @@ const Circle = ({ totalDots, sliderNumber, setSliderNumber }: Props) => {
           data-number={dot}
           onClick={handleClick}
         >
-          {dot}
+          <div className={s.dotInner}>{dot}</div>
         </div>
       ))}
     </div>
