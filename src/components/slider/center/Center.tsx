@@ -1,5 +1,6 @@
 import s from "./Center.module.scss";
 import Circle from "./circle/Circle";
+import TextCenter from "./text/TextCenter";
 type Props = {
   totalDots: number;
   sliderNumber: number;
@@ -22,10 +23,7 @@ const Center = ({
         sliderNumber={sliderNumber}
         setSliderNumber={setSliderNumber}
       />
-      <div className={s.years}>
-        <div className={s.leftYear}>{year1}</div>
-        <div className={s.rightYear}>{year2}</div>
-      </div>
+      <TextCenter year1={year1} year2={year2}/>
     </div>
   );
 };

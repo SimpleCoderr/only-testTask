@@ -1,16 +1,23 @@
 import s from "./MySwiper.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation  } from "swiper";
-import dataSlider from "../../../API";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { ISlideValue } from "../../../types";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 
 type Props = {
   dataSlider: Array<ISlideValue>;
 }
 const MySwiper = ({dataSlider}: Props) => {
+  const swiperSlideRef = useRef<HTMLDivElement>(null)
+  const swiperRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+      gsap.fromTo(`.${s.swiper}`, { y: 20, opacity:0}, { duration: 1.5, y:0, opacity:1 })
+  })
   return (
       <Swiper 
         className={s.swiper}

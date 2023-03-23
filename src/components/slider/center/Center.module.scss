@@ -9,23 +9,3 @@
   height: 530px;
   //transform: translate(-50%, -50%);
 }
-.years {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 50px;
-}
-.leftYear,
-.rightYear {
-  font-weight: 700;
-  font-size: 200px;
-  line-height: 160px;
-}
-.leftYear {
-  color: #5d5fef;
-}
-.rightYear {
-  color: #ef5da8;
-}
