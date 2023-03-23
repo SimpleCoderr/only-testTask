@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/only-testTask/static/css/main.afb3e169.css",
+    "main.js": "/only-testTask/static/js/main.268e3e21.js",
+    "static/media/Bebas_Neue.ttf": "/only-testTask/static/media/Bebas_Neue.f39fe92d35bac3b2fe60.ttf",
+    "index.html": "/only-testTask/index.html",
+    "main.afb3e169.css.map": "/only-testTask/static/css/main.afb3e169.css.map",
+    "main.268e3e21.js.map": "/only-testTask/static/js/main.268e3e21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afb3e169.css",
+    "static/js/main.268e3e21.js"
+  ]
+}
