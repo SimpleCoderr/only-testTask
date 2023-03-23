@@ -1,0 +1,24 @@
+.name {
+  //position: absolute;
+  //left: 0;
+  align-self: flex-start ;
+  position: relative;
+  left: -80px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 120%;
+  color: #42567a;
+  max-width: 353px;
+  padding-left: 80px;
+  border-image: linear-gradient(#3877ee, #ef5da8) 3;
+  border-style: solid;
+  border-width: 5px;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  margin-bottom: -80px;
+}
+.name::first-letter {
+  text-transform: uppercase;
+}

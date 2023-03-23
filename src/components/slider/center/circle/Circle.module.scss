@@ -1,0 +1,40 @@
+.circle {
+  position: relative;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  transform-origin: center;
+  transform-style: flat;
+  border: 1px solid rgba(66, 86, 122, 0.2);
+  transition: all 1.5s;
+}
+.dot {
+  position: absolute;
+  transform-origin: 50% 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: #42567a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PT Sans";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width, height, background-color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+.dot:hover,
+.activeDot {
+  width: 56px;
+  height: 56px;
+  background-color: transparent;
+  border: 1px solid rgba(48, 62, 88, 0.5);
+}

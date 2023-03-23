@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'Bebas Neue'; 
+	src: url('./../../../fonts/Bebas_Neue.ttf'); 
+}
+.swiper {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.slide {
+
+}
+.slideTitle {
+  font-family: 'Bebas Neue';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #3877ee;
+  margin-bottom: 15px;
+}
+
+.slideDescription {
+  font-size: 20px;
+  line-height: 30px;
+  color: #42567a;
+  min-height: 90px;
+  scroll-behavior: auto;
+}
