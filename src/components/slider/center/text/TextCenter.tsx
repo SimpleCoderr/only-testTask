@@ -28,7 +28,7 @@ const TextCenter = ({}: Props) => {
 
   }, [year1]);
   return (
-    <div className={s.years}>
+    <div className={s.text}>
       <div className={s.leftYear}>{prevYears.year1}</div>
       <div className={s.rightYear}>{prevYears.year2}</div>
     </div>

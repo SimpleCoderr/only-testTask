@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-import { ISlide } from "../../types";
+import { ISlide } from "../../types/types";
 import Center from "./center/Center";
 import Counter from "./counter/Counter";
 import Layout from "./layout/Layout";
 import s from "./Slider.module.scss";
 import Name from "./sliderName/Name";
 import MySwiper from "./swiper/MySwiper";
-import './../../Swiper.scss'
+import "./../../scss/Swiper.scss";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type Props = {
   name: string;
@@ -26,6 +27,8 @@ const Slider = ({ name, data }: Props) => {
   const [sliderNumber, setSliderNumber] = useState(1);
   const [currentSlider, setCurrentSlider] = useState<ISlide>(data[0]);
 
+  const isAboveMediumScreens = useMediaQuery("(max-width: 320px)");
+
   useEffect(() => {
     setCurrentSlider(data[sliderNumber - 1]);
   }, [sliderNumber]);
@@ -41,10 +44,19 @@ const Slider = ({ name, data }: Props) => {
     >
       <div className={s.slider}>
         <Name name={name} />
-        <Center/>
-        <Counter/>
-        <MySwiper/>
-        <Layout />
+        <Center />
+        {!isAboveMediumScreens ? (
+          <>
+            <Counter />
+            <MySwiper />
+          </>
+        ) : (
+          <>
+            <MySwiper />
+            <Counter />
+          </>
+        )}
+        {!isAboveMediumScreens && <Layout />}
       </div>
     </SliderContext.Provider>
   );

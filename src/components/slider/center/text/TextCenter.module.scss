@@ -1,20 +1,31 @@
-.years {
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 50px;
-  }
+.text {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 50px;
+  font-size: 200px;
+  line-height: 160px;
+
   .leftYear,
-  .rightYear {
-    font-weight: 700;
-    font-size: 200px;
-    line-height: 160px;
+.rightYear {
+  font-weight: 700;
+}
+.leftYear {
+  color: #5d5fef;
+}
+.rightYear {
+  color: #ef5da8;
+}
+
+  @media (max-width: 320px) {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: none;
+    font-size: 56px;
+    gap: 25px;
+    line-height: 72px;
   }
-  .leftYear {
-    color: #5d5fef;
-  }
-  .rightYear {
-    color: #ef5da8;
-  }
+}

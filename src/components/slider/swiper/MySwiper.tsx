@@ -1,18 +1,22 @@
 import s from "./MySwiper.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ISlideValue } from "../../../types";
+import "swiper/css/pagination";
+import { ISlideValue } from "../../../types/types";
 import { useContext, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { SliderContext } from "../Slider";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 type Props = {};
 const MySwiper = ({}: Props) => {
   const {
     currentSlider: { value: sliders },
   } = useContext(SliderContext);
+
+  const isAboveMediumScreens = useMediaQuery("(max-width: 320px)");
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -24,11 +28,11 @@ const MySwiper = ({}: Props) => {
   return (
     <Swiper
       className={s.swiper}
-      modules={[Navigation]}
-      pagination={{ clickable: true }}
-      slidesPerView={3}
-      spaceBetween={80}
-      navigation={true}
+      modules={[Navigation, Pagination]}
+      pagination={isAboveMediumScreens ? true :  false}
+      slidesPerView={isAboveMediumScreens ? 1 : 3}
+      spaceBetween={isAboveMediumScreens ? 25 : 80}
+      navigation={isAboveMediumScreens ? false : true}
     >
       {sliders.map((slide: ISlideValue) => (
         <SwiperSlide className={s.slide} key={slide.data}>

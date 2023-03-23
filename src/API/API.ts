@@ -1,4 +1,4 @@
-import { ISlide } from "./types";
+import { ISlide } from "../types/types";
 
 
 const dataSlider: Array<ISlide> = [
@@ -78,7 +78,7 @@ const dataSlider: Array<ISlide> = [
           },
           {
             data: '1971',
-            description: `Tjhfgjhvjhvhjvhjbkhjbjknjknkjnlknklnl uck Tesla Semi`,
+            description: `Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11`,
           },
           {
             data: '1972',
@@ -100,28 +100,28 @@ const dataSlider: Array<ISlide> = [
       },
       {
         id: 4,
-        year1: '1950',
-        year2: '1960',
+        year1: '1990',
+        year2: '2000',
         label: 'Кино',
         value: [
           {
-            data: '1950',
+            data: '1990',
             description: `13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды`,
           },
           {
-            data: '1951',
+            data: '1991',
             description: `Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11`,
           },
           {
-            data: '1952',
+            data: '1992',
             description: `Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi`,
           },
           {
-            data: '1953',
+            data: '1993',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
-            data: '1954',
+            data: '1994',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
@@ -132,64 +132,64 @@ const dataSlider: Array<ISlide> = [
       },
       {
         id: 5,
-        year1: '1950',
-        year2: '1960',
+        year1: '2000',
+        year2: '2015',
         label: 'Кино',
         value: [
           {
-            data: '1950',
+            data: '2000',
             description: `13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды`,
           },
           {
-            data: '1951',
+            data: '2001',
             description: `Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11`,
           },
           {
-            data: '1952',
+            data: '2002',
             description: `Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi`,
           },
           {
-            data: '1953',
+            data: '2003',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
-            data: '1954',
+            data: '2004',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
-            data: '1955',
+            data: '2005',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
         ],
       },
       {
         id: 6,
-        year1: '1950',
-        year2: '1960',
+        year1: '2015',
+        year2: '2030',
         label: 'Кино',
         value: [
           {
-            data: '1950',
+            data: '2020',
             description: `13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды`,
           },
           {
-            data: '1951',
+            data: '2021',
             description: `Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11`,
           },
           {
-            data: '1952',
+            data: '2022',
             description: `Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi`,
           },
           {
-            data: '1953',
+            data: '2023',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
-            data: '1954',
+            data: '2024',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
           {
-            data: '1955',
+            data: '2025',
             description: `Tesla has officially unveiled the world's first electric truck Tesla Semi`,
           },
         ],

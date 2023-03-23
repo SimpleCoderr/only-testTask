@@ -8,21 +8,20 @@
     border: 1px solid rgba(66, 86, 122, 0.1);
     border-top: none;
     border-bottom: none;
-}
-
-.layoutVertical {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: 1px;
-    background-color:rgba(66, 86, 122, 0.1) ;
-}
-
-.layoutHorisontal {
-    position: absolute;
-    top: 488px;
-    width: 100%;
-    height: 1px;
-    background-color:rgba(66, 86, 122, 0.1) ;
+    .layoutVertical {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 1px;
+        background-color:rgba(66, 86, 122, 0.1) ;
+    }
+    
+    .layoutHorisontal {
+        position: absolute;
+        top: 488px;
+        width: 100%;
+        height: 1px;
+        background-color:rgba(66, 86, 122, 0.1) ;
+    }
 }

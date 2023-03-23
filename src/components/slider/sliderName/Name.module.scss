@@ -1,13 +1,11 @@
 .name {
-  //position: absolute;
-  //left: 0;
-  align-self: flex-start ;
+  align-self: flex-start;
   position: relative;
   left: -80px;
   font-style: normal;
   font-weight: 700;
   font-size: 56px;
-  line-height: 120%;
+  line-height: 67px;
   color: #42567a;
   max-width: 353px;
   padding-left: 80px;
@@ -18,7 +16,16 @@
   border-right: 0;
   border-bottom: 0;
   margin-bottom: -80px;
-}
-.name::first-letter {
-  text-transform: uppercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+  @media (max-width: 320px) {
+    left: 0;
+    padding: 0;
+    margin-bottom: 0;
+    border: none;
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 123px;
+  }
 }

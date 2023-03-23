@@ -1,11 +1,15 @@
 .center {
-  //position: absolute;
-  //top: 50%;
-  //left: 50%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 530px;
-  //transform: translate(-50%, -50%);
+  
+  @media(max-width: 320px) {
+    position: static;
+    height: fit-content;
+    padding: 56px 0;
+    border-bottom:1px solid #C7CDD9;;
+    margin-bottom: 20px;
+  }
 }
