@@ -1,17 +1,14 @@
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { SliderContext } from "../../Slider";
 import s from "./TextCenter.module.scss";
-type Props = {
-  year1: string;
-  year2: string;
-};
-const TextCenter = ({ year1, year2 }: Props) => {
+type Props = {};
+const TextCenter = ({}: Props) => {
+  const {currentSlider: {year1, year2}} = useContext(SliderContext)
   const [prevYears, setPrevYears] = useState({
     year1: +year1,
     year2: +year2,
   });
-  const leftYearRef = useRef<HTMLDivElement>(null);
-  const rightYearRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
       const a: any = {

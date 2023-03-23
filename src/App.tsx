@@ -1,5 +1,5 @@
 import dataSlider from './API';
-import './App.css';
+import './App.scss';
 import Slider from './components/slider/Slider';
 
 function App() {

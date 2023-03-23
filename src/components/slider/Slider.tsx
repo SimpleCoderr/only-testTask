@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { ISlide } from "../../types";
 import Center from "./center/Center";
 import Counter from "./counter/Counter";
@@ -6,6 +6,7 @@ import Layout from "./layout/Layout";
 import s from "./Slider.module.scss";
 import Name from "./sliderName/Name";
 import MySwiper from "./swiper/MySwiper";
+import './../../Swiper.scss'
 
 type Props = {
   name: string;
@@ -13,34 +14,36 @@ type Props = {
 };
 
 export interface ISlider {
+  currentSlider: ISlide;
   sliderNumber: number;
-  totalSliders: number;
   setSliderNumber: (value: React.SetStateAction<number>) => void;
+  totalDots: number;
 }
 
-export const SliderContext = createContext<ISlider>({
-  sliderNumber: 1,
-  totalSliders: 0,
-  setSliderNumber: (value: React.SetStateAction<number>) => {},
-});
+export const SliderContext = createContext<any>({});
 
 const Slider = ({ name, data }: Props) => {
   const [sliderNumber, setSliderNumber] = useState(1);
+  const [currentSlider, setCurrentSlider] = useState<ISlide>(data[0]);
+
+  useEffect(() => {
+    setCurrentSlider(data[sliderNumber - 1]);
+  }, [sliderNumber]);
 
   return (
     <SliderContext.Provider
-      value={{ sliderNumber, setSliderNumber, totalSliders: data.length }}
+      value={{
+        currentSlider,
+        sliderNumber,
+        setSliderNumber,
+        totalDots: data.length,
+      }}
     >
       <div className={s.slider}>
         <Name name={name} />
-        <Center
-          totalDots={data.length}
-          sliderNumber={sliderNumber}
-          setSliderNumber={setSliderNumber}
-          years={{ year1: data[sliderNumber-1].year1, year2: data[sliderNumber-1].year2 }}
-        />
-        <Counter />
-        <MySwiper dataSlider={data[sliderNumber - 1].value} />
+        <Center/>
+        <Counter/>
+        <MySwiper/>
         <Layout />
       </div>
     </SliderContext.Provider>

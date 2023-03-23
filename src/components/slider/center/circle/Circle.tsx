@@ -1,17 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { toRadian } from "../../../../ts/degToRadian";
 import { getNewCoordOfDot } from "../../../../ts/getNewCoordOfDot";
 import { setNewCoordForDot } from "../../../../ts/setNewCoordForDot";
+import { SliderContext } from "../../Slider";
 import s from "./Circle.module.scss";
 
-type Props = {
-  totalDots: number;
-  sliderNumber: number;
-  setSliderNumber: (value: React.SetStateAction<number>) => void;
-};
-const Circle = ({ totalDots, sliderNumber, setSliderNumber }: Props) => {
+type Props = {};
+
+const Circle = ({}: Props) => {
+  const { currentSlider, sliderNumber, setSliderNumber, totalDots } =
+    useContext(SliderContext);
+
   const circleRef = useRef<HTMLDivElement | null>(null);
-  const [degree, setDegree] = useState(0);
+  const [degree, setDegree] = useState(30);
   const [prevSlider, setPrevSlider] = useState(sliderNumber);
 
   useEffect(() => {
@@ -46,10 +47,12 @@ const Circle = ({ totalDots, sliderNumber, setSliderNumber }: Props) => {
   useEffect(() => {
     if (circleRef.current) {
       circleRef.current.style.transform = `rotate(${degree}deg)`;
-      const children = Array.from(circleRef.current.children)
-      children.forEach(dot => {
-        (dot.firstChild as HTMLDivElement).style.transform = `rotate(${-degree}deg)`
-      })
+      const children = Array.from(circleRef.current.children);
+      children.forEach((dot) => {
+        (
+          dot.firstChild as HTMLDivElement
+        ).style.transform = `rotate(${-degree}deg)`;
+      });
     }
   }, [degree]);
 
@@ -73,7 +76,9 @@ const Circle = ({ totalDots, sliderNumber, setSliderNumber }: Props) => {
           data-number={dot}
           onClick={handleClick}
         >
-          <div className={s.dotInner}>{dot}</div>
+          <div className={s.dotInner} data-label={currentSlider.label}>
+            {dot}
+          </div>
         </div>
       ))}
     </div>

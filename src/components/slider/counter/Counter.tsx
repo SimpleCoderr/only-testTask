@@ -3,9 +3,10 @@ import { SliderContext } from "../Slider";
 import s from "./Counter.module.scss";
 
 type Props = {};
+
 const Counter = ({}: Props) => {
-  const { sliderNumber, setSliderNumber, totalSliders } =
-    useContext(SliderContext);
+
+  const {sliderNumber, setSliderNumber, totalDots} = useContext(SliderContext)
 
   const handleClickIncrement = () => {
     setSliderNumber(sliderNumber + 1);
@@ -16,7 +17,7 @@ const Counter = ({}: Props) => {
   return (
     <div className={s.counter}>
       <div className={s.totalCount}>
-        {sliderNumber}/{totalSliders}
+        {`${sliderNumber}`.padStart(2,'0')}/{`${totalDots}`.padStart(2,'0')}
       </div>
       <div className={s.btns}>
         <button
@@ -26,7 +27,7 @@ const Counter = ({}: Props) => {
         />
         <button
           className={s.rightBtn}
-          disabled={sliderNumber === totalSliders}
+          disabled={sliderNumber === totalDots}
           onClick={handleClickIncrement}
         />
       </div>
